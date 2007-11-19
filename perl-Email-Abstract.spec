@@ -1,7 +1,7 @@
 %define module      Email-Abstract
 %define name        perl-%{module}
-%define version     2.13.2
-%define up_version  2.132
+%define version     2.13.4
+%define up_version  2.134
 %define release     %mkrel 1
 
 Name:           %{name}
@@ -11,7 +11,7 @@ Summary:        Unified interface to mail representations
 License:        GPL or Artistic
 Group:          Development/Perl
 URL:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Email/%{module}-%{up_version}.tar.bz2
+Source:         http://www.cpan.org/modules/by-module/Email/%{module}-%{up_version}.tar.gz
 %if %{mdkversion} < 1010
 BuildRequires:  perl-devel
 %endif
