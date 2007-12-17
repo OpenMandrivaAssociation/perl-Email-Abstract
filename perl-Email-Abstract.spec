@@ -18,7 +18,6 @@ BuildRequires:  perl-devel
 BuildRequires:  perl(Email::Simple)
 BuildRequires:  perl(Module::Pluggable)
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 Email::Abstract provides module writers with the ability to write
