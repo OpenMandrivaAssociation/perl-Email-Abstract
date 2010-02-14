@@ -1,20 +1,21 @@
-%define module      Email-Abstract
-%define name        perl-%{module}
-%define version     3.001
-%define release     %mkrel 3
+%define upstream_name    Email-Abstract
+%define upstream_version 3.001
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Unified interface to mail representations
-License:        GPL or Artistic
-Group:          Development/Perl
-URL:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Email/%{module}-%{version}.tar.gz
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 4
+
+Summary:    Unified interface to mail representations
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Email/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:  perl(Email::Simple)
 BuildRequires:  perl(Module::Pluggable)
+
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Email::Abstract provides module writers with the ability to write
@@ -36,14 +37,14 @@ encapsulated in this software. Further, the process of creating RFC compliant
 date strings is also found in this software.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
@@ -57,5 +58,3 @@ rm -rf %{buildroot}
 %doc README Changes
 %{perl_vendorlib}/Email
 %{_mandir}/*/*
-
-
