@@ -1,9 +1,9 @@
 %define upstream_name    Email-Abstract
-%define upstream_version 3.002
+%define upstream_version 3.003
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:    Unified interface to mail representations
 License:    GPL+ or Artistic
