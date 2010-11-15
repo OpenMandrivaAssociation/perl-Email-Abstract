@@ -14,6 +14,7 @@ Source0:    http://www.cpan.org/modules/by-module/Email/%{upstream_name}-%{upstr
 BuildRequires:  perl(Email::Simple)
 BuildRequires:  perl(Module::Pluggable)
 BuildRequires:  perl(MRO::Compat)
+BuildRequires:  perl(Class::Accessor::Grouped)
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
