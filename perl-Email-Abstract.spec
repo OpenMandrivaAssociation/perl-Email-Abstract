@@ -1,5 +1,5 @@
 %define upstream_name    Email-Abstract
-%define upstream_version 3.003
+%define upstream_version 3.004
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -11,6 +11,7 @@ Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Email/%{upstream_name}-%{upstream_version}.tar.gz
 
+BuildRequires:  perl(MIME::Entity) >= 5.501.0
 BuildRequires:  perl(Email::Simple)
 BuildRequires:  perl(Module::Pluggable)
 BuildRequires:  perl(MRO::Compat)
