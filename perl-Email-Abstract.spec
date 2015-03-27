@@ -1,14 +1,14 @@
 %define modname	Email-Abstract
-%define modver 3.007
+%define modver 3.008
 
 Summary:	Unified interface to mail representations
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	5
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/Email/Email-Abstract-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Email/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(MIME::Entity) >= 5.501.0
 BuildRequires:	perl(Email::Simple)
@@ -40,7 +40,7 @@ date strings is also found in this software.
 %setup -qn %{modname}-%{modver}
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
@@ -53,5 +53,3 @@ date strings is also found in this software.
 %doc Changes
 %{perl_vendorlib}/Email
 %{_mandir}/man3/*
-
-
