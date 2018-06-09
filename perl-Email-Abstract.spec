@@ -15,6 +15,7 @@ BuildRequires:	perl(Email::Simple)
 BuildRequires:	perl(Module::Pluggable)
 BuildRequires:	perl(MRO::Compat)
 BuildRequires:	perl(Class::Accessor::Grouped)
+BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
 
 %description
