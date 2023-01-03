@@ -1,14 +1,13 @@
 %define modname	Email-Abstract
-%define modver 3.008
 
 Summary:	Unified interface to mail representations
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
+Version:	3.009
 Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/Email/Email-Abstract-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Email/Email-Abstract-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(MIME::Entity) >= 5.501.0
 BuildRequires:	perl(Email::Simple)
@@ -38,21 +37,19 @@ encapsulated in this software. Further, the process of creating RFC compliant
 date strings is also found in this software.
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -p1 -n %{modname}-%{version}
+perl Makefile.PL INSTALLDIRS=vendor
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
-%make
+%make_build
 
 %check
 %make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc Changes
 %{perl_vendorlib}/Email
 %{_mandir}/man3/*
-
-
