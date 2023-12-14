@@ -2,8 +2,8 @@
 
 Summary:	Unified interface to mail representations
 Name:		perl-%{modname}
-Version:	3.009
-Release:	2
+Version:	3.010
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
